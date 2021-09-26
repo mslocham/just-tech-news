@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 // create our Post model
 class Post extends Model {
+    /* we're using JavaScript's built-in static keyword to indicate that the upvote method is one
+     that's based on the Post model and not an instance method like we used earlier with the User model. */
     static upvote(body, models) {
       return models.Vote.create({
         user_id: body.user_id,
